@@ -12,6 +12,7 @@ library(gridExtra)
 library(rsvg)
 library(rgdal)
 library(geosphere)
+library(R.utils)
 
 #Load utility scripts
 for(file in list.files(file.path("analysis","R","utils"))){

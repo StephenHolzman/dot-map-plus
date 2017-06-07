@@ -2,9 +2,6 @@ loadStyling <- function(){
   
   styling <- list()
   
-  #logos
-  styling$logos$icon$svg <- rsvg("/Volumes/Storage/WCCPPDRGlogo.svg",height = 75)
-  
   styling$colors$main <- c("#FF7003","#235281","#a8ad00","#9e2a2b","#00812e","salmon","blue","#993290","#3b1f60") #vector of hexadecimal strings (ex: "#1F8CD7") or recognized color word strings (ex: "Red")
   styling$colors$political <- c("red","white","blue") #alternate colors for political spectrum
   styling$colors$financial <- c("dark green","green","light green") #alternate colors for less money to more money

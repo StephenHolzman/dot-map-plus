@@ -133,9 +133,11 @@ drawMap <- function(mapData,countyoutlines,pointdata,pointx = "startLong",pointy
   grid.text(author, x=unit(width-8,"points"),y=unit(35,"points"),just="right",gp=gpar(fontsize=styling$footer$author$font$size*1.5,fontfamily=styling$footer$author$font$family,fontface=styling$footer$author$font$face, col=styling$header$title$font$color))
   grid.text(title, x=unit(50,"points"),y=unit((height-32)/height,"npc"),just="left",gp=gpar(fontsize=styling$header$title$font$size*1.5,fontfamily=styling$header$title$font$family,fontface=styling$header$title$font$face, col=styling$header$title$font$color))
   grid.text(subtitle, x=unit(50,"points"),y=unit((height-114)/height,"npc"),just="left",gp=gpar(fontsize=styling$header$subtitle$font$size*1.5,fontfamily=styling$header$subtitle$font$family,fontface=styling$header$subtitle$font$face, col=styling$header$subtitle$font$color))
-  img <- rsvg(file.path("input","logos","WCCPPDRGlogoBlueText.svg"),height = 75)
-  g <- rasterGrob(img,x=unit(235,"points"),y=unit(26/height,"npc"),height=unit(50,"points"))
-  print(grid.draw(g), newpage = FALSE)
+  if(file.exists(file.path("input","logos","WCCPPDRGlogoBlueText.svg"))){
+    img <- rsvg(file.path("input","logos","WCCPPDRGlogoBlueText.svg"),height = 75)
+    g <- rasterGrob(img,x=unit(235,"points"),y=unit(26/height,"npc"),height=unit(50,"points"))
+    print(grid.draw(g), newpage = FALSE)    
+  }
   
   dev.off()
   
