@@ -94,8 +94,10 @@ drawMap <- function(mapData,countyoutlines,pointdata,pointx = "startLong",pointy
          # axis.ticks.margin = unit(0,"null"),
           plot.margin = unit(c(0,10,30,10),"points"))
   
-  table_text <- select(group_counts, -percent,-lab,-dummy) %>%
-    format(digits = 0, scientific=F,big.mark = ",")
+  table_text <- select(group_counts, -percent,-lab,-dummy)
+  
+  table_text$Total <- format(table_text$Total,digits = 0, scientific=F,big.mark = ",")
+   
   
   names(table_text)[2] <- paste0("Total (",format(sum(group_counts$Total),digits = 0, scientific=F,big.mark = ","),")")
   
